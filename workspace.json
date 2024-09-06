@@ -1,35 +1,70 @@
 {
-  "configuration" : { },
+  "configuration" : {
+    "scope" : "SoftwareSystem"
+  },
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-09-05T20:05:58Z",
+  "lastModifiedDate" : "2024-09-06T20:39:49Z",
   "model" : {
     "people" : [ {
       "id" : "1",
       "location" : "Unspecified",
-      "name" : "User",
+      "name" : "Usuário",
       "properties" : {
         "structurizr.dsl.identifier" : "u"
       },
       "relationships" : [ {
-        "description" : "Uses",
-        "destinationId" : "2",
-        "id" : "3",
+        "description" : "Usa",
+        "destinationId" : "3",
+        "id" : "5",
         "properties" : {
-          "structurizr.dsl.identifier" : "58529f47-1235-43c9-bfd9-dfe65f574083"
+          "structurizr.dsl.identifier" : "0a7d299b-0d71-401f-8ebe-401401d9b1f5"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
+      }, {
+        "description" : "Usa",
+        "destinationId" : "2",
+        "id" : "6",
+        "linkedRelationshipId" : "5",
+        "sourceId" : "1"
       } ],
       "tags" : "Element,Person"
     } ],
     "softwareSystems" : [ {
+      "containers" : [ {
+        "documentation" : { },
+        "id" : "3",
+        "name" : "Applicação Web",
+        "properties" : {
+          "structurizr.dsl.identifier" : "wa"
+        },
+        "relationships" : [ {
+          "description" : "Lê dados",
+          "destinationId" : "4",
+          "id" : "7",
+          "properties" : {
+            "structurizr.dsl.identifier" : "079f4c1f-7e15-4af5-ac25-b5991b6183d1"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "4",
+        "name" : "Banco de Dados",
+        "properties" : {
+          "structurizr.dsl.identifier" : "db"
+        },
+        "tags" : "Element,Container,Database"
+      } ],
       "documentation" : { },
       "id" : "2",
       "location" : "Unspecified",
-      "name" : "Software System",
+      "name" : "Software",
       "properties" : {
         "structurizr.dsl.identifier" : "ss"
       },
@@ -38,17 +73,41 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdSA9IHBlcnNvbiAiVXNlciIKICAgICAgICBzcyA9IHNvZnR3YXJlU3lzdGVtICJTb2Z0d2FyZSBTeXN0ZW0iCgogICAgICAgIHUgLT4gc3MgIlVzZXMiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgc3MgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCBscgogICAgICAgIH0KICAgIH0KICAgIAp9Cg=="
+    "structurizr.inspection.*" : "error",
+    "structurizr.dslEditor" : "false",
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCQoJY29uZmlndXJhdGlvbiB7CgkJLy8gbGFuZHNjYXBlLCBub25lCgkJc2NvcGUgc29mdHdhcmVzeXN0ZW0KCX0KCQoJcHJvcGVydGllcyB7CgkJLy8gd2FybmluZyBpbmZvIGlnbm9yZQoJCXN0cnVjdHVyaXpyLmluc3BlY3Rpb24uKiBlcnJvcgoJCXN0cnVjdHVyaXpyLmRzbEVkaXRvciBmYWxzZQoJfQoJCgltb2RlbCB7CgkJdSA9IHBlcnNvbiAiVXN1w6FyaW8iCgkJc3MgPSBzb2Z0d2FyZVN5c3RlbSAiU29mdHdhcmUiIHsKCQkJd2EgPSBjb250YWluZXIgIkFwcGxpY2HDp8OjbyBXZWIiCgkJCWRiID0gY29udGFpbmVyICJCYW5jbyBkZSBEYWRvcyIgewoJCQkJdGFncyAiRGF0YWJhc2UiCgkJCX0KCQl9CgkJCgkJdSAtPiB3YSAiVXNhIgoJCXdhIC0+IGRiICJMw6ogZGFkb3MiCgl9CgkKCXZpZXdzIHsKCQlzeXN0ZW1Db250ZXh0IHNzICJEaWFncmFtYTEiIHsKCQkJaW5jbHVkZSAqCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJCgkJY29udGFpbmVyIHNzICJEaWFncmFtYTIiIHsKCQkJaW5jbHVkZSB1IHdhIGRiCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJCgkJLyoKCQljb250YWluZXIgc3MgIkRpYWdyYW0zIiB7CgkJCWluY2x1ZGUgIi0+d2EtPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW00IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC50eXBlPT1jb250YWluZXItPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW01IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC5wYXJlbnQ9PXNzLT4iCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJKi8KCQkKCQlzdHlsZXMgewoJCQllbGVtZW50ICJFbGVtZW50IiB7CgkJCQljb2xvciBibGFjawoJCQl9CgkJCQoJCQllbGVtZW50ICJTb2Z0d2FyZSIgewoJCQkJYmFja2dyb3VuZCAjMkQ4ODJECgkJCX0KCQkJCgkJCWVsZW1lbnQgIlBlcnNvbiIgewoJCQkJY29sb3Igd2hpdGUKCQkJCWJhY2tncm91bmQgIzExMTE2NgoJCQkJc2hhcGUgcGVyc29uCgkJCX0KCQkJCgkJCWVsZW1lbnQgIkNvbnRhaW5lciIgewoJCQkJY29sb3Igd2hpdGUKCQkJCWJhY2tncm91bmQgIzU1YWE1NQoJCQl9CgkJCQoJCQllbGVtZW50ICJEYXRhYmFzZSIgewoJCQkJY29sb3IgYmxhY2sKCQkJCWJhY2tncm91bmQgI2RkZGRkZAoJCQkJc2hhcGUgY3lsaW5kZXIKCQkJfQoJCX0KCX0KCQp9Cg=="
   },
   "views" : {
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "SystemContext-001",
+      "lastSavedView" : "Diagrama2",
       "metadataSymbols" : "SquareBrackets",
-      "styles" : { },
+      "styles" : {
+        "elements" : [ {
+          "color" : "#000000",
+          "tag" : "Element"
+        }, {
+          "background" : "#2d882d",
+          "tag" : "Software"
+        }, {
+          "background" : "#111166",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#55aa55",
+          "color" : "#ffffff",
+          "tag" : "Container"
+        }, {
+          "background" : "#dddddd",
+          "color" : "#000000",
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        } ]
+      },
       "terminology" : { }
     },
-    "systemContextViews" : [ {
+    "containerViews" : [ {
       "automaticLayout" : {
         "applied" : true,
         "edgeSeparation" : 0,
@@ -59,24 +118,56 @@
         "vertices" : false
       },
       "dimensions" : {
-        "height" : 700,
-        "width" : 1600
+        "height" : 841,
+        "width" : 2320
       },
       "elements" : [ {
         "id" : "1",
         "x" : 200,
         "y" : 200
       }, {
+        "id" : "3",
+        "x" : 900,
+        "y" : 250
+      }, {
+        "id" : "4",
+        "x" : 1650,
+        "y" : 250
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Diagrama2",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "5"
+      }, {
+        "id" : "7"
+      } ],
+      "softwareSystemId" : "2"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
         "id" : "2",
-        "x" : 950,
-        "y" : 200
+        "x" : 0,
+        "y" : 0
       } ],
       "enterpriseBoundaryVisible" : true,
-      "generatedKey" : true,
-      "key" : "SystemContext-001",
+      "key" : "Diagrama1",
       "order" : 1,
       "relationships" : [ {
-        "id" : "3"
+        "id" : "6"
       } ],
       "softwareSystemId" : "2"
     } ]
