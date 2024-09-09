@@ -1,5 +1,10 @@
 workspace {
 	
+	!const ORGANISATION_NAME "Organização"
+	!const GROUP_NAME "Grupo"
+	
+	!identifiers hierarchical
+	
 	configuration {
 		// landscape, none
 		scope softwaresystem
@@ -12,7 +17,9 @@ workspace {
 	}
 	
 	model {
-		u = person "Usuário"
+		group "${ORGANISATION_NAME} - ${GROUP_NAME}" {
+			u = person "Usuário"
+		}
 		ss = softwareSystem "Software" {
 			wa = container "Applicação Web"
 			db = container "Banco de Dados" {
@@ -20,18 +27,20 @@ workspace {
 			}
 		}
 		
-		u -> wa "Usa"
-		wa -> db "Lê dados"
+		rel_u_wa = u -> ss.wa "Usa"
+		rel_wa_db = ss.wa -> ss.db "Lê dados"
 	}
 	
 	views {
+		// theme default
+		
 		systemContext ss "Diagrama1" {
 			include *
 			autolayout lr
 		}
 		
 		container ss "Diagrama2" {
-			include u wa db
+			include u ss.wa ss.db
 			autolayout lr
 		}
 		
