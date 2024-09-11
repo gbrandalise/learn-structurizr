@@ -1,4 +1,4 @@
-workspace {
+workspace "Documentação do Software" {
 	
 	!include variables.dsl
 	
@@ -11,5 +11,7 @@ workspace {
 	!include model.dsl
 	
 	!include view.dsl
+	
+	!docs docs
 	
 }
