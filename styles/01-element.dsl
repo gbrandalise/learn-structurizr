@@ -1,0 +1,3 @@
+element "Element" {
+	color black
+}
