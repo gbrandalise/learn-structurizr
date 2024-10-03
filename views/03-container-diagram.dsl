@@ -1,4 +1,5 @@
 container ss "Diagrama2" {
-	include u ss.wa ss.db
+	include element.type==person
+	include element.type==container
 	autolayout lr
 }

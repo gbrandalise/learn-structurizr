@@ -4,6 +4,43 @@
   },
   "description" : "Description",
   "documentation" : {
+    "decisions" : [ {
+      "content" : "# 1. Decisão depreciada\n\nDate: 2023-10-01\n\n## Status\n\nDeprecated\n\n## Context\n\nPrecisamos tratar o problema XYZ.\n\n## Decision\n\nEm uma pesquisa rápida, constatou-se que usar a biblioteca XPTO é a melhor opção para resolver o problema XYZ.\n\n## Consequences\n\nO software ficará fortemente acoplado a biblioteca XPTO devido a sua arquitetura.",
+      "date" : "2023-10-01T00:00:00Z",
+      "format" : "Markdown",
+      "id" : "1",
+      "status" : "Deprecated",
+      "title" : "Decisão depreciada"
+    }, {
+      "content" : "# 2. Decisão substituída\n\nDate: 2023-10-01\n\n## Status\n\nSuperseded\n\n## Context\n\nPrecisamos tratar o problema XYZ.\n\n## Decision\n\nEm uma pesquisa rápida, constatou-se que usar a biblioteca XPTO é a melhor opção para resolver o problema XYZ.\n\n## Consequences\n\nO software ficará fortemente acoplado a biblioteca XPTO devido a sua arquitetura.",
+      "date" : "2023-10-01T00:00:00Z",
+      "format" : "Markdown",
+      "id" : "2",
+      "status" : "Superseded",
+      "title" : "Decisão substituída"
+    }, {
+      "content" : "# 3. Usar biblioteca XPTO\n\nDate: 2024-10-01\n\n## Status\n\nAccepted [Decisão Depreciada](#1)\n\n## Context\n\nPrecisamos tratar o problema XYZ.\n\n## Decision\n\nEm uma pesquisa rápida, constatou-se que usar a biblioteca XPTO é a melhor opção para resolver o problema XYZ.\n\n## Consequences\n\nO software ficará fortemente acoplado a biblioteca XPTO devido a sua arquitetura.",
+      "date" : "2024-10-01T00:00:00Z",
+      "format" : "Markdown",
+      "id" : "3",
+      "links" : [ {
+        "description" : "Accepted",
+        "id" : "1"
+      } ],
+      "status" : "Accepted",
+      "title" : "Usar biblioteca XPTO"
+    }, {
+      "content" : "# 4. Decisão proposta\n\nDate: 2024-10-01\n\n## Status\n\nProposed [Substituindo a Decisão substituída](#2)\n\n## Context\n\nPrecisamos tratar o problema XYZ.\n\n## Decision\n\nEm uma pesquisa rápida, constatou-se que usar a biblioteca XPTO é a melhor opção para resolver o problema XYZ.\n\n## Consequences\n\nO software ficará fortemente acoplado a biblioteca XPTO devido a sua arquitetura.",
+      "date" : "2024-10-01T00:00:00Z",
+      "format" : "Markdown",
+      "id" : "4",
+      "links" : [ {
+        "description" : "Proposed",
+        "id" : "2"
+      } ],
+      "status" : "Proposed",
+      "title" : "Decisão proposta"
+    } ],
     "sections" : [ {
       "content" : "## Quality Attributes\n\nThe quality attributes for the new Financial Risk System are as follows.\n\n### Performance\n\n- Risk reports must be generated before 9am the following business day in Singapore.\n \n### Scalability\n- The system must be able to cope with trade volumes for the next 5 years.\n- The Trade Data System export includes approximately 5000 trades now and it is anticipated that there will be an additional 10 trades per day.\n- The Reference Data System counterparty export includes approximately 20,000 counterparties and growth will be negligible.\n- There are 40-50 business users around the world that need access to the report.\n\n### Availability\n\n- Risk reports should be available to users 24x7, but a small amount of downtime (less than 30 minutes per day) can be tolerated.\n\n### Failover\n\n- Manual failover is sufficient for all system components, provided that the availability targets can be met.\n\n### Security\n\n- This system must follow bank policy that states system access is restricted to authenticated and authorised users only.\n- Reports must only be distributed to authorised users.\n- Only a subset of the authorised users are permitted to modify the parameters used in the risk calculations.\n- Although desirable, there are no single sign-on requirements (e.g. integration with Active Directory, LDAP, etc).\n- All access to the system and reports will be within the confines of the bank's global network.\n\n### Audit\n\n- The following events must be recorded in the system audit logs:\n  - Report generation.\n  - Modification of risk calculation parameters.\n- It must be possible to understand the input data that was used in calculating risk.\n\n### Fault Tolerance and Resilience\n\n- The system should take appropriate steps to recover from an error if possible, but all errors should be logged.\n- Errors preventing a counterparty risk calculation being completed should be logged and the process should continue.\n\n### Internationalization and Localization\n\n- All user interfaces will be presented in English only.\n- All reports will be presented in English only.\n- All trading values and risk figures will be presented in US dollars only.\n\n### Monitoring and Management\n\n- A Simple Network Management Protocol (SNMP) trap should be sent to the bank's Central Monitoring Service in the following circumstances:\n  - When there is a fatal error with a system component.\n  - When reports have not been generated before 9am Singapore time.\n\n### Data Retention and Archiving\n\n- Input files used in the risk calculation process must be retained for 1 year.\n\n### Interoperability\n\n- Interfaces with existing data systems should conform to and use existing data formats.",
       "filename" : "01-example.md",
@@ -19,8 +56,7 @@
     } ]
   },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-09-11T20:58:11Z",
+  "lastModifiedDate" : "2024-10-03T14:04:59Z",
   "model" : {
     "people" : [ {
       "group" : "Organização - Grupo",
@@ -33,7 +69,7 @@
       "relationships" : [ {
         "description" : "Usa",
         "destinationId" : "3",
-        "id" : "5",
+        "id" : "8",
         "properties" : {
           "structurizr.dsl.identifier" : "rel_u_wa"
         },
@@ -42,14 +78,62 @@
       }, {
         "description" : "Usa",
         "destinationId" : "2",
-        "id" : "6",
-        "linkedRelationshipId" : "5",
+        "id" : "9",
+        "linkedRelationshipId" : "8",
         "sourceId" : "1"
       } ],
       "tags" : "Element,Person"
     } ],
     "softwareSystems" : [ {
       "containers" : [ {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "4",
+          "name" : "Tela Login",
+          "properties" : {
+            "structurizr.dsl.identifier" : "ss.wa.loginview"
+          },
+          "relationships" : [ {
+            "description" : "Chama",
+            "destinationId" : "5",
+            "id" : "11",
+            "properties" : {
+              "structurizr.dsl.identifier" : "rel_loginview_loginservice"
+            },
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Angular"
+        }, {
+          "documentation" : { },
+          "id" : "5",
+          "name" : "Service Login",
+          "properties" : {
+            "structurizr.dsl.identifier" : "ss.wa.loginservice"
+          },
+          "relationships" : [ {
+            "description" : "Consome",
+            "destinationId" : "6",
+            "id" : "12",
+            "properties" : {
+              "structurizr.dsl.identifier" : "rel_loginservice_loginapi"
+            },
+            "sourceId" : "5",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Angular"
+        }, {
+          "documentation" : { },
+          "id" : "6",
+          "name" : "Api Login",
+          "properties" : {
+            "structurizr.dsl.identifier" : "ss.wa.loginapi"
+          },
+          "tags" : "Element,Component",
+          "technology" : "Spring"
+        } ],
         "documentation" : { },
         "id" : "3",
         "name" : "Applicação Web",
@@ -58,8 +142,8 @@
         },
         "relationships" : [ {
           "description" : "Lê dados",
-          "destinationId" : "4",
-          "id" : "7",
+          "destinationId" : "7",
+          "id" : "10",
           "properties" : {
             "structurizr.dsl.identifier" : "rel_wa_db"
           },
@@ -69,7 +153,7 @@
         "tags" : "Element,Container"
       }, {
         "documentation" : { },
-        "id" : "4",
+        "id" : "7",
         "name" : "Banco de Dados",
         "properties" : {
           "structurizr.dsl.identifier" : "ss.db"
@@ -90,13 +174,45 @@
   "properties" : {
     "structurizr.inspection.*" : "error",
     "structurizr.dslEditor" : "false",
-    "structurizr.dsl" : "d29ya3NwYWNlICJEb2N1bWVudGHDp8OjbyBkbyBTb2Z0d2FyZSIgewoJCgkhY29uc3QgT1JHQU5JU0FUSU9OX05BTUUgIk9yZ2FuaXphw6fDo28iCgkhY29uc3QgR1JPVVBfTkFNRSAiR3J1cG8iCgkKCSFpZGVudGlmaWVycyBoaWVyYXJjaGljYWwKCQoJY29uZmlndXJhdGlvbiB7CgkJLy8gbGFuZHNjYXBlLCBub25lCgkJc2NvcGUgc29mdHdhcmVzeXN0ZW0KCX0KCQoJcHJvcGVydGllcyB7CgkJLy8gd2FybmluZyBpbmZvIGlnbm9yZQoJCXN0cnVjdHVyaXpyLmluc3BlY3Rpb24uKiBlcnJvcgoJCXN0cnVjdHVyaXpyLmRzbEVkaXRvciBmYWxzZQoJfQoJCgltb2RlbCB7CgkJCgkJZ3JvdXAgIiR7T1JHQU5JU0FUSU9OX05BTUV9IC0gJHtHUk9VUF9OQU1FfSIgewoJCQl1ID0gcGVyc29uICJVc3XDoXJpbyIKCQl9CgkJc3MgPSBzb2Z0d2FyZVN5c3RlbSAiU29mdHdhcmUiIHsKCQkJd2EgPSBjb250YWluZXIgIkFwcGxpY2HDp8OjbyBXZWIiCgkJCWRiID0gY29udGFpbmVyICJCYW5jbyBkZSBEYWRvcyIgewoJCQkJdGFncyAiRGF0YWJhc2UiCgkJCX0KCQl9CgkJcmVsX3Vfd2EgPSB1IC0+IHNzLndhICJVc2EiCgkJcmVsX3dhX2RiID0gc3Mud2EgLT4gc3MuZGIgIkzDqiBkYWRvcyIKCQkKCX0KCQoJdmlld3MgewoJCQoJCS8vIHRoZW1lIGRlZmF1bHQKCQlzeXN0ZW1Db250ZXh0IHNzICJEaWFncmFtYTEiIHsKCQkJaW5jbHVkZSAqCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJY29udGFpbmVyIHNzICJEaWFncmFtYTIiIHsKCQkJaW5jbHVkZSB1IHNzLndhIHNzLmRiCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJLyoKCQljb250YWluZXIgc3MgIkRpYWdyYW0zIiB7CgkJCWluY2x1ZGUgIi0+d2EtPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW00IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC50eXBlPT1jb250YWluZXItPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW01IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC5wYXJlbnQ9PXNzLT4iCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJKi8KCQkKCQlzdHlsZXMgewoJCQkKCQkJZWxlbWVudCAiRWxlbWVudCIgewoJCQkJY29sb3IgYmxhY2sKCQkJfQoJCQllbGVtZW50ICJTb2Z0d2FyZSIgewoJCQkJYmFja2dyb3VuZCAjMkQ4ODJECgkJCX0KCQkJZWxlbWVudCAiUGVyc29uIiB7CgkJCQljb2xvciB3aGl0ZQoJCQkJYmFja2dyb3VuZCAjMTExMTY2CgkJCQlzaGFwZSBwZXJzb24KCQkJfQoJCQllbGVtZW50ICJDb250YWluZXIiIHsKCQkJCWNvbG9yIHdoaXRlCgkJCQliYWNrZ3JvdW5kICM1NWFhNTUKCQkJfQoJCQllbGVtZW50ICJEYXRhYmFzZSIgewoJCQkJY29sb3IgYmxhY2sKCQkJCWJhY2tncm91bmQgI2RkZGRkZAoJCQkJc2hhcGUgY3lsaW5kZXIKCQkJfQoJCQkKCQl9CgkJCgl9CgkKCSFkb2NzIGRvY3MKCQp9Cg=="
+    "structurizr.dsl" : "d29ya3NwYWNlICJEb2N1bWVudGHDp8OjbyBkbyBTb2Z0d2FyZSIgewoJCgkhY29uc3QgT1JHQU5JU0FUSU9OX05BTUUgIk9yZ2FuaXphw6fDo28iCgkhY29uc3QgR1JPVVBfTkFNRSAiR3J1cG8iCgkKCSFpZGVudGlmaWVycyBoaWVyYXJjaGljYWwKCQoJY29uZmlndXJhdGlvbiB7CgkJLy8gbGFuZHNjYXBlLCBub25lCgkJc2NvcGUgc29mdHdhcmVzeXN0ZW0KCX0KCQoJcHJvcGVydGllcyB7CgkJLy8gd2FybmluZyBpbmZvIGlnbm9yZQoJCXN0cnVjdHVyaXpyLmluc3BlY3Rpb24uKiBlcnJvcgoJCXN0cnVjdHVyaXpyLmRzbEVkaXRvciBmYWxzZQoJfQoJCgltb2RlbCB7CgkJCgkJZ3JvdXAgIiR7T1JHQU5JU0FUSU9OX05BTUV9IC0gJHtHUk9VUF9OQU1FfSIgewoJCQl1ID0gcGVyc29uICJVc3XDoXJpbyIKCQl9CgkJc3MgPSBzb2Z0d2FyZVN5c3RlbSAiU29mdHdhcmUiIHsKCQkJd2EgPSBjb250YWluZXIgIkFwcGxpY2HDp8OjbyBXZWIiIHsKCQkJCWxvZ2luVmlldyA9IGNvbXBvbmVudCAiVGVsYSBMb2dpbiIgIiIgIkFuZ3VsYXIiCgkJCQlsb2dpblNlcnZpY2UgPSBjb21wb25lbnQgIlNlcnZpY2UgTG9naW4iICIiICJBbmd1bGFyIgoJCQkJbG9naW5BcGkgPSBjb21wb25lbnQgIkFwaSBMb2dpbiIgIiIgIlNwcmluZyIKCQkJfQoJCQlkYiA9IGNvbnRhaW5lciAiQmFuY28gZGUgRGFkb3MiIHsKCQkJCXRhZ3MgIkRhdGFiYXNlIgoJCQl9CgkJfQoJCXJlbF91X3dhID0gdSAtPiBzcy53YSAiVXNhIgoJCXJlbF93YV9kYiA9IHNzLndhIC0+IHNzLmRiICJMw6ogZGFkb3MiCgkJCgkJcmVsX2xvZ2luVmlld19sb2dpblNlcnZpY2UgPSBzcy53YS5sb2dpblZpZXcgLT4gc3Mud2EubG9naW5TZXJ2aWNlICJDaGFtYSIKCQlyZWxfbG9naW5TZXJ2aWNlX2xvZ2luQXBpID0gc3Mud2EubG9naW5TZXJ2aWNlIC0+IHNzLndhLmxvZ2luQXBpICJDb25zb21lIgoJCQoJfQoJCgl2aWV3cyB7CgkJCgkJLy8gdGhlbWUgZGVmYXVsdAoJCXN5c3RlbUNvbnRleHQgc3MgIkRpYWdyYW1hMSIgewoJCQlpbmNsdWRlICoKCQkJYXV0b2xheW91dCBscgoJCX0KCQljb250YWluZXIgc3MgIkRpYWdyYW1hMiIgewoJCQlpbmNsdWRlIGVsZW1lbnQudHlwZT09cGVyc29uCgkJCWluY2x1ZGUgZWxlbWVudC50eXBlPT1jb250YWluZXIKCQkJYXV0b2xheW91dCBscgoJCX0KCQljb21wb25lbnQgc3Mud2EgIkRpYWdyYW1hMyIgewoJCQlpbmNsdWRlIGVsZW1lbnQudHlwZT09Y29tcG9uZW50CgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJLyoKCQljb250YWluZXIgc3MgIkRpYWdyYW0zIiB7CgkJCWluY2x1ZGUgIi0+d2EtPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW00IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC50eXBlPT1jb250YWluZXItPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW01IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC5wYXJlbnQ9PXNzLT4iCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJKi8KCQkKCQlzdHlsZXMgewoJCQkKCQkJZWxlbWVudCAiRWxlbWVudCIgewoJCQkJY29sb3IgYmxhY2sKCQkJfQoJCQllbGVtZW50ICJTb2Z0d2FyZSIgewoJCQkJYmFja2dyb3VuZCAjMkQ4ODJECgkJCX0KCQkJZWxlbWVudCAiUGVyc29uIiB7CgkJCQljb2xvciB3aGl0ZQoJCQkJYmFja2dyb3VuZCAjMTExMTY2CgkJCQlzaGFwZSBwZXJzb24KCQkJfQoJCQllbGVtZW50ICJDb250YWluZXIiIHsKCQkJCWNvbG9yIHdoaXRlCgkJCQliYWNrZ3JvdW5kICM1NWFhNTUKCQkJfQoJCQllbGVtZW50ICJEYXRhYmFzZSIgewoJCQkJY29sb3IgYmxhY2sKCQkJCWJhY2tncm91bmQgI2RkZGRkZAoJCQkJc2hhcGUgY3lsaW5kZXIKCQkJfQoJCQllbGVtZW50ICJDb21wb25lbnQiIHsKCQkJCWNvbG9yIHdoaXRlCgkJCQliYWNrZ3JvdW5kICM5OTk5ZmYKCQkJfQoJCQkKCQl9CgkJCgl9CgkKCSFkb2NzIGRvY3MKCQoJIWFkcnMgYWRybHMKCQp9Cg=="
   },
   "views" : {
+    "componentViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "3",
+      "elements" : [ {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "Diagrama3",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "11"
+      }, {
+        "id" : "12"
+      } ]
+    } ],
     "configuration" : {
       "branding" : { },
       "lastSavedView" : "Diagrama1",
-      "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
           "color" : "#000000",
@@ -118,13 +234,17 @@
           "color" : "#000000",
           "shape" : "Cylinder",
           "tag" : "Database"
+        }, {
+          "background" : "#9999ff",
+          "color" : "#ffffff",
+          "tag" : "Component"
         } ]
       },
       "terminology" : { }
     },
     "containerViews" : [ {
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -132,36 +252,32 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "dimensions" : {
-        "height" : 841,
-        "width" : 2320
-      },
       "elements" : [ {
         "id" : "1",
-        "x" : 200,
-        "y" : 200
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "3",
-        "x" : 900,
-        "y" : 250
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "4",
-        "x" : 1650,
-        "y" : 250
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Diagrama2",
       "order" : 2,
       "relationships" : [ {
-        "id" : "5"
+        "id" : "10"
       }, {
-        "id" : "7"
+        "id" : "8"
       } ],
       "softwareSystemId" : "2"
     } ],
     "systemContextViews" : [ {
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -169,24 +285,20 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "dimensions" : {
-        "height" : 894,
-        "width" : 1570
-      },
       "elements" : [ {
         "id" : "1",
-        "x" : 219,
-        "y" : 219
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "2",
-        "x" : 919,
-        "y" : 269
+        "x" : 0,
+        "y" : 0
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "Diagrama1",
       "order" : 1,
       "relationships" : [ {
-        "id" : "6"
+        "id" : "9"
       } ],
       "softwareSystemId" : "2"
     } ]

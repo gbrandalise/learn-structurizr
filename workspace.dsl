@@ -14,4 +14,6 @@ workspace "Documentação do Software" {
 	
 	!docs docs
 	
+	!adrs adrls
+	
 }
