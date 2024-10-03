@@ -56,8 +56,47 @@
     } ]
   },
   "id" : 1,
-  "lastModifiedDate" : "2024-10-03T14:04:59Z",
+  "lastModifiedAgent" : "structurizr-javascript",
+  "lastModifiedDate" : "2024-10-03T14:17:55Z",
   "model" : {
+    "deploymentNodes" : [ {
+      "containerInstances" : [ {
+        "containerId" : "3",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "QA",
+        "id" : "14",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "qa.aaec950a-7540-49a8-ad1c-8c93dece85a2.c0bfcfdc-45e9-4432-b4d9-073c0c0bff54"
+        },
+        "relationships" : [ {
+          "description" : "Lê dados",
+          "destinationId" : "15",
+          "id" : "16",
+          "linkedRelationshipId" : "10",
+          "sourceId" : "14"
+        } ],
+        "tags" : "Container Instance"
+      }, {
+        "containerId" : "7",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "QA",
+        "id" : "15",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "qa.aaec950a-7540-49a8-ad1c-8c93dece85a2.1dd84a89-2c71-4813-b9de-f6e1953833be"
+        },
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "QA",
+      "id" : "13",
+      "instances" : "1",
+      "name" : "QA",
+      "properties" : {
+        "structurizr.dsl.identifier" : "qa.aaec950a-7540-49a8-ad1c-8c93dece85a2"
+      },
+      "tags" : "Element,Deployment Node"
+    } ],
     "people" : [ {
       "group" : "Organização - Grupo",
       "id" : "1",
@@ -174,7 +213,7 @@
   "properties" : {
     "structurizr.inspection.*" : "error",
     "structurizr.dslEditor" : "false",
-    "structurizr.dsl" : "d29ya3NwYWNlICJEb2N1bWVudGHDp8OjbyBkbyBTb2Z0d2FyZSIgewoJCgkhY29uc3QgT1JHQU5JU0FUSU9OX05BTUUgIk9yZ2FuaXphw6fDo28iCgkhY29uc3QgR1JPVVBfTkFNRSAiR3J1cG8iCgkKCSFpZGVudGlmaWVycyBoaWVyYXJjaGljYWwKCQoJY29uZmlndXJhdGlvbiB7CgkJLy8gbGFuZHNjYXBlLCBub25lCgkJc2NvcGUgc29mdHdhcmVzeXN0ZW0KCX0KCQoJcHJvcGVydGllcyB7CgkJLy8gd2FybmluZyBpbmZvIGlnbm9yZQoJCXN0cnVjdHVyaXpyLmluc3BlY3Rpb24uKiBlcnJvcgoJCXN0cnVjdHVyaXpyLmRzbEVkaXRvciBmYWxzZQoJfQoJCgltb2RlbCB7CgkJCgkJZ3JvdXAgIiR7T1JHQU5JU0FUSU9OX05BTUV9IC0gJHtHUk9VUF9OQU1FfSIgewoJCQl1ID0gcGVyc29uICJVc3XDoXJpbyIKCQl9CgkJc3MgPSBzb2Z0d2FyZVN5c3RlbSAiU29mdHdhcmUiIHsKCQkJd2EgPSBjb250YWluZXIgIkFwcGxpY2HDp8OjbyBXZWIiIHsKCQkJCWxvZ2luVmlldyA9IGNvbXBvbmVudCAiVGVsYSBMb2dpbiIgIiIgIkFuZ3VsYXIiCgkJCQlsb2dpblNlcnZpY2UgPSBjb21wb25lbnQgIlNlcnZpY2UgTG9naW4iICIiICJBbmd1bGFyIgoJCQkJbG9naW5BcGkgPSBjb21wb25lbnQgIkFwaSBMb2dpbiIgIiIgIlNwcmluZyIKCQkJfQoJCQlkYiA9IGNvbnRhaW5lciAiQmFuY28gZGUgRGFkb3MiIHsKCQkJCXRhZ3MgIkRhdGFiYXNlIgoJCQl9CgkJfQoJCXJlbF91X3dhID0gdSAtPiBzcy53YSAiVXNhIgoJCXJlbF93YV9kYiA9IHNzLndhIC0+IHNzLmRiICJMw6ogZGFkb3MiCgkJCgkJcmVsX2xvZ2luVmlld19sb2dpblNlcnZpY2UgPSBzcy53YS5sb2dpblZpZXcgLT4gc3Mud2EubG9naW5TZXJ2aWNlICJDaGFtYSIKCQlyZWxfbG9naW5TZXJ2aWNlX2xvZ2luQXBpID0gc3Mud2EubG9naW5TZXJ2aWNlIC0+IHNzLndhLmxvZ2luQXBpICJDb25zb21lIgoJCQoJfQoJCgl2aWV3cyB7CgkJCgkJLy8gdGhlbWUgZGVmYXVsdAoJCXN5c3RlbUNvbnRleHQgc3MgIkRpYWdyYW1hMSIgewoJCQlpbmNsdWRlICoKCQkJYXV0b2xheW91dCBscgoJCX0KCQljb250YWluZXIgc3MgIkRpYWdyYW1hMiIgewoJCQlpbmNsdWRlIGVsZW1lbnQudHlwZT09cGVyc29uCgkJCWluY2x1ZGUgZWxlbWVudC50eXBlPT1jb250YWluZXIKCQkJYXV0b2xheW91dCBscgoJCX0KCQljb21wb25lbnQgc3Mud2EgIkRpYWdyYW1hMyIgewoJCQlpbmNsdWRlIGVsZW1lbnQudHlwZT09Y29tcG9uZW50CgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJLyoKCQljb250YWluZXIgc3MgIkRpYWdyYW0zIiB7CgkJCWluY2x1ZGUgIi0+d2EtPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW00IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC50eXBlPT1jb250YWluZXItPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW01IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC5wYXJlbnQ9PXNzLT4iCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJKi8KCQkKCQlzdHlsZXMgewoJCQkKCQkJZWxlbWVudCAiRWxlbWVudCIgewoJCQkJY29sb3IgYmxhY2sKCQkJfQoJCQllbGVtZW50ICJTb2Z0d2FyZSIgewoJCQkJYmFja2dyb3VuZCAjMkQ4ODJECgkJCX0KCQkJZWxlbWVudCAiUGVyc29uIiB7CgkJCQljb2xvciB3aGl0ZQoJCQkJYmFja2dyb3VuZCAjMTExMTY2CgkJCQlzaGFwZSBwZXJzb24KCQkJfQoJCQllbGVtZW50ICJDb250YWluZXIiIHsKCQkJCWNvbG9yIHdoaXRlCgkJCQliYWNrZ3JvdW5kICM1NWFhNTUKCQkJfQoJCQllbGVtZW50ICJEYXRhYmFzZSIgewoJCQkJY29sb3IgYmxhY2sKCQkJCWJhY2tncm91bmQgI2RkZGRkZAoJCQkJc2hhcGUgY3lsaW5kZXIKCQkJfQoJCQllbGVtZW50ICJDb21wb25lbnQiIHsKCQkJCWNvbG9yIHdoaXRlCgkJCQliYWNrZ3JvdW5kICM5OTk5ZmYKCQkJfQoJCQkKCQl9CgkJCgl9CgkKCSFkb2NzIGRvY3MKCQoJIWFkcnMgYWRybHMKCQp9Cg=="
+    "structurizr.dsl" : "d29ya3NwYWNlICJEb2N1bWVudGHDp8OjbyBkbyBTb2Z0d2FyZSIgewoJCgkhY29uc3QgT1JHQU5JU0FUSU9OX05BTUUgIk9yZ2FuaXphw6fDo28iCgkhY29uc3QgR1JPVVBfTkFNRSAiR3J1cG8iCgkKCSFpZGVudGlmaWVycyBoaWVyYXJjaGljYWwKCQoJY29uZmlndXJhdGlvbiB7CgkJLy8gbGFuZHNjYXBlLCBub25lCgkJc2NvcGUgc29mdHdhcmVzeXN0ZW0KCX0KCQoJcHJvcGVydGllcyB7CgkJLy8gd2FybmluZyBpbmZvIGlnbm9yZQoJCXN0cnVjdHVyaXpyLmluc3BlY3Rpb24uKiBlcnJvcgoJCXN0cnVjdHVyaXpyLmRzbEVkaXRvciBmYWxzZQoJfQoJCgltb2RlbCB7CgkJCgkJZ3JvdXAgIiR7T1JHQU5JU0FUSU9OX05BTUV9IC0gJHtHUk9VUF9OQU1FfSIgewoJCQl1ID0gcGVyc29uICJVc3XDoXJpbyIKCQl9CgkJc3MgPSBzb2Z0d2FyZVN5c3RlbSAiU29mdHdhcmUiIHsKCQkJd2EgPSBjb250YWluZXIgIkFwcGxpY2HDp8OjbyBXZWIiIHsKCQkJCWxvZ2luVmlldyA9IGNvbXBvbmVudCAiVGVsYSBMb2dpbiIgIiIgIkFuZ3VsYXIiCgkJCQlsb2dpblNlcnZpY2UgPSBjb21wb25lbnQgIlNlcnZpY2UgTG9naW4iICIiICJBbmd1bGFyIgoJCQkJbG9naW5BcGkgPSBjb21wb25lbnQgIkFwaSBMb2dpbiIgIiIgIlNwcmluZyIKCQkJfQoJCQlkYiA9IGNvbnRhaW5lciAiQmFuY28gZGUgRGFkb3MiIHsKCQkJCXRhZ3MgIkRhdGFiYXNlIgoJCQl9CgkJfQoJCXJlbF91X3dhID0gdSAtPiBzcy53YSAiVXNhIgoJCXJlbF93YV9kYiA9IHNzLndhIC0+IHNzLmRiICJMw6ogZGFkb3MiCgkJCgkJcmVsX2xvZ2luVmlld19sb2dpblNlcnZpY2UgPSBzcy53YS5sb2dpblZpZXcgLT4gc3Mud2EubG9naW5TZXJ2aWNlICJDaGFtYSIKCQlyZWxfbG9naW5TZXJ2aWNlX2xvZ2luQXBpID0gc3Mud2EubG9naW5TZXJ2aWNlIC0+IHNzLndhLmxvZ2luQXBpICJDb25zb21lIgoJCXFhID0gZGVwbG95bWVudEVudmlyb25tZW50ICJRQSIgewoJCQlkZXBsb3ltZW50Tm9kZSAiUUEiIHsKCQkJCWNvbnRhaW5lckluc3RhbmNlIHNzLndhCgkJCQljb250YWluZXJJbnN0YW5jZSBzcy5kYgoJCQl9CgkJfQoJCQoJfQoJCgl2aWV3cyB7CgkJCgkJLy8gdGhlbWUgZGVmYXVsdAoJCXN5c3RlbUNvbnRleHQgc3MgIkRpYWdyYW1hMSIgewoJCQlpbmNsdWRlICoKCQkJYXV0b2xheW91dCBscgoJCX0KCQljb250YWluZXIgc3MgIkRpYWdyYW1hMiIgewoJCQlpbmNsdWRlIGVsZW1lbnQudHlwZT09cGVyc29uCgkJCWluY2x1ZGUgZWxlbWVudC50eXBlPT1jb250YWluZXIKCQkJYXV0b2xheW91dCBscgoJCX0KCQljb21wb25lbnQgc3Mud2EgIkRpYWdyYW1hMyIgewoJCQlpbmNsdWRlIGVsZW1lbnQudHlwZT09Y29tcG9uZW50CgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJLyoKCQljb250YWluZXIgc3MgIkRpYWdyYW0zIiB7CgkJCWluY2x1ZGUgIi0+d2EtPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW00IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC50eXBlPT1jb250YWluZXItPiIKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQljb250YWluZXIgc3MgIkRpYWdyYW01IiB7CgkJCWluY2x1ZGUgIi0+ZWxlbWVudC5wYXJlbnQ9PXNzLT4iCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJKi8KCQlkZXBsb3ltZW50IHNzIHFhICJEaWFncmFtYTQiIHsKCQkJaW5jbHVkZSAqCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJCgkJc3R5bGVzIHsKCQkJCgkJCWVsZW1lbnQgIkVsZW1lbnQiIHsKCQkJCWNvbG9yIGJsYWNrCgkJCX0KCQkJZWxlbWVudCAiU29mdHdhcmUiIHsKCQkJCWJhY2tncm91bmQgIzJEODgyRAoJCQl9CgkJCWVsZW1lbnQgIlBlcnNvbiIgewoJCQkJY29sb3Igd2hpdGUKCQkJCWJhY2tncm91bmQgIzExMTE2NgoJCQkJc2hhcGUgcGVyc29uCgkJCX0KCQkJZWxlbWVudCAiQ29udGFpbmVyIiB7CgkJCQljb2xvciB3aGl0ZQoJCQkJYmFja2dyb3VuZCAjNTVhYTU1CgkJCX0KCQkJZWxlbWVudCAiRGF0YWJhc2UiIHsKCQkJCWNvbG9yIGJsYWNrCgkJCQliYWNrZ3JvdW5kICNkZGRkZGQKCQkJCXNoYXBlIGN5bGluZGVyCgkJCX0KCQkJZWxlbWVudCAiQ29tcG9uZW50IiB7CgkJCQljb2xvciB3aGl0ZQoJCQkJYmFja2dyb3VuZCAjOTk5OWZmCgkJCX0KCQkJCgkJfQoJCQoJfQoJCgkhZG9jcyBkb2NzCgkKCSFhZHJzIGFkcmxzCgkKfQo="
   },
   "views" : {
     "componentViews" : [ {
@@ -212,7 +251,8 @@
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "Diagrama1",
+      "lastSavedView" : "Diagrama4",
+      "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
           "color" : "#000000",
@@ -272,6 +312,41 @@
         "id" : "10"
       }, {
         "id" : "8"
+      } ],
+      "softwareSystemId" : "2"
+    } ],
+    "deploymentViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 811,
+        "width" : 1640
+      },
+      "elements" : [ {
+        "id" : "13",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "14",
+        "x" : 220,
+        "y" : 220
+      }, {
+        "id" : "15",
+        "x" : 970,
+        "y" : 220
+      } ],
+      "environment" : "QA",
+      "key" : "Diagrama4",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "16"
       } ],
       "softwareSystemId" : "2"
     } ],
